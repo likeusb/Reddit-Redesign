@@ -17,6 +17,9 @@
     --acc: rgb(255, 150, 136);
     --acc-hover: rgb(253, 155, 155);
     --warn: yellow;
+
+    --upvote-color: #b5370b;
+    --downvote-color: #5f55e2;
 }
 
 h1,
@@ -44,7 +47,7 @@ h2 {
 
 h4 {
     font-size: clamp(1rem, 0.75dvw, 3rem);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 h5 {
@@ -114,6 +117,16 @@ nav .logo {
     height: 3rem;
 }
 
+nav .rcontent {
+    display: flex;
+    gap: 10px;
+}
+
+nav .rcontent img {
+    height: 40px;
+    width: 40px;
+}
+
 .search {
     background-color: var(--bg-prim);
     color: var(--font-prim);
@@ -137,6 +150,9 @@ input {
     border: none;
 }
 
-nav .rcontent {
-    font-size: 2rem;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
 }
