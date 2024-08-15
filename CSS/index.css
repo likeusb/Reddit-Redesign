@@ -1,0 +1,7 @@
+.indicators div {
+    display: flex;
+}
+
+.indicators {
+    line-height: 200%;
+}

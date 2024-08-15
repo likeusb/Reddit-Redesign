@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    font-family: "Noto Serif", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    font-size: 10px;
+
+    --bg-prim: rgb(30, 30, 30);
+    --bg-sec: rgb(25, 25, 25);
+
+    --font-prim: rgb(255, 255, 255);
+
+    --acc: rgb(255, 150, 136);
+    --acc-hover: rgb(253, 155, 155);
+    --warn: yellow;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6,
+a,
+p {
+    color: var(--font-prim);
+
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 2dvw, 5rem);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: clamp(2rem, 1.5dvw, 3.75rem);
+    font-weight: 400;
+}
+
+h4 {
+    font-size: clamp(1rem, 0.75dvw, 3rem);
+    font-weight: 300;
+}
+
+h5 {
+    font-size: clamp(3rem, 3dvw, 10rem);
+    font-weight: 600;
+}
+
+h6 {
+    font-size: clamp(4rem, 4dvw, 10rem);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: clamp(1rem, 1.25dvw, 4rem);
+}
+
+@media screen and (orientation: portrait) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 3.5rem;
+    }
+
+    h6 {
+        font-size: 4.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-prim);
+    color: var(--font-prim);
+}
+
+nav {
+    height: 10rem;
+    background-color: var(--bg-sec);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+}
+
+nav .logo {
+    width: 10rem;
+    height: 3rem;
+}
+
+.search {
+    background-color: var(--bg-prim);
+    color: var(--font-prim);
+    border: 1px solid var(--font-prim);
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search img {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+}
+
+input {
+    background-color: transparent;
+    color: var(--font-prim);
+    border: none;
+}
+
+nav .rcontent {
+    font-size: 2rem;
+}
