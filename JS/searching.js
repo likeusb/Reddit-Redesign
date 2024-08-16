@@ -29,20 +29,6 @@ function parseArray(value) {
     return tobeDisplayed;
 }
 
-function insertInitial() {
-    var div = document.getElementById('searchbox');
-    while(div.firstChild){
-        div.removeChild(div.firstChild);
-    }
-
-    for (var i = 0; i < 16; i++) {
-        if (pages[i] == undefined) {
-            break;
-        }
-        searchbox.insertAdjacentHTML('beforeend', '<p>'+pages[i]+'</p>');
-    }
-}
-
 function insertElements() { 
     var div = document.getElementById('searchbox');
     while(div.firstChild){
@@ -65,9 +51,9 @@ function insertElements() {
 
     for (var i = 0; i < searchresults.length; i++) {
         searchresults[i].addEventListener('click', function() {
-            loadPage(this.textContent, 'ligos');
-        })
-    }
+            saveSearches(this.textContent);
+        });
+    };
 };
 
 
@@ -91,4 +77,37 @@ function getCookie(name) {
     const value = "; " + document.cookie;
     const parts = value.split("; " + name + "=");
     if (parts.length == 2) return parts.pop().split(";").shift();
+};
+
+let searchInsert = [];
+// searchInsert = [getCookie('RecentSearches').split(',')];
+
+function saveSearches(searchTerm) {
+    searchInsert.push(searchTerm);
+    console.log(searchInsert);
+
+    for (var i = searchInsert.length; i > 5;) {
+        console.log(searchInsert.shift());
+    };
+
+    setCookie(searchInsert);
+};
+
+function insertInitial() {
+    var div = document.getElementById('searchbox');
+    while(div.firstChild){
+        div.removeChild(div.firstChild);
+    }
+
+    let searches = getCookie('RecentSearches').split(',');
+    if (searches == undefined) {
+        return;
+    }
+
+    for (var i = 0; i < 6; i++) {
+        if (searches[i] == undefined) {
+            break;
+        }
+        searchbox.insertAdjacentHTML('beforeend', '<p class="searchresult" data-page="'+searches[i]+'">'+searches[i]+'</p>');
+    };
 };

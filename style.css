@@ -159,7 +159,7 @@ nav .rcontent img {
     bottom: 0px;
     transform: translateY(100%);
     left: -1px;
-    visibility: visible;
+    visibility: hidden;
     background-color: var(--bg-prim);
     border: 1px solid var(--font-prim);
     padding: 10px;
