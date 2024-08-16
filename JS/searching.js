@@ -79,19 +79,22 @@ function getCookie(name) {
     if (parts.length == 2) return parts.pop().split(";").shift();
 };
 
-let searchInsert = [];
-// searchInsert = [getCookie('RecentSearches').split(',')];
+let toSave = [];
 
-function saveSearches(searchTerm) {
-    searchInsert.push(searchTerm);
-    console.log(searchInsert);
+function saveSearches(value) {
+    if (toSave.length < 5) {
+        toSave.push(value);
+    }
 
-    for (var i = searchInsert.length; i > 5;) {
-        console.log(searchInsert.shift());
-    };
+    if (toSave.length == 5) {
+        toSave.shift();
+        toSave.push(value);
+    }
 
-    setCookie(searchInsert);
-};
+    setCookie(toSave);
+}
+
+let toInsert = [];
 
 function insertInitial() {
     var div = document.getElementById('searchbox');
@@ -99,15 +102,11 @@ function insertInitial() {
         div.removeChild(div.firstChild);
     }
 
-    let searches = getCookie('RecentSearches').split(',');
-    if (searches == undefined) {
-        return;
+    if (getCookie('RecentSearches') != undefined) {
+        toInsert = getCookie('RecentSearches').split(',');
     }
 
-    for (var i = 0; i < 6; i++) {
-        if (searches[i] == undefined) {
-            break;
-        }
-        searchbox.insertAdjacentHTML('beforeend', '<p class="searchresult" data-page="'+searches[i]+'">'+searches[i]+'</p>');
-    };
-};
+    for (var i = 0; i < toInsert.length; i++) {
+        searchbox.insertAdjacentHTML('beforeend', '<p class="searchresult" data-page="'+toInsert[i]+'">'+toInsert[i]+'</p>');
+    }
+}

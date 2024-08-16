@@ -138,6 +138,7 @@ nav .rcontent img {
     gap: 1rem;
     position: relative;
     box-sizing: border-box;
+    width: 50%;
 }
 
 .search.searchActive {
@@ -148,6 +149,10 @@ nav .rcontent img {
     width: 2rem;
     height: 2rem;
     font-size: 1.5rem;
+}
+
+.search input {
+    width: 100%;
 }
 
 .search input:focus {
