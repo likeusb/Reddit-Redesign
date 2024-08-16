@@ -188,7 +188,7 @@ main {
 }
 
 .openingMenu {
-    visibility: hidden;
+    transform-origin: top right;
     background-color: var(--bg-prim);
     padding: 10px;
     display: flex;
@@ -203,11 +203,11 @@ main {
 }
 
 .openable.active .openingMenu {
-    visibility: visible;
+    transform: scale(1);
 }
 
 #dms {
-    /* visibility: hidden; */
+    visibility: hidden;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -243,9 +243,8 @@ main {
 .messages {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     gap: 10px;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 330px;
 }
 
@@ -283,6 +282,22 @@ main {
     border-radius: 5px 5px 20px 0;
 }
 
+.outgoing .message:first-child {
+    border-radius: 20px 20px 5px 5px;
+}
+
+.outgoing .message:first-child:not(:has(+ .message)) {
+    border-radius: 20px 20px 0 20px;
+}
+
+.outgoing .message:not(:first-child):not(:last-child) {
+    border-radius: 5px;
+}
+
+.outgoing .message:last-child {
+    border-radius: 5px 5px 0px 20px;
+}
+
 .input {
     display: flex;
     gap: 10px;
@@ -295,14 +310,24 @@ main {
     align-items: center;
 }
 
+.input input {
+    width: 100%;
+}
+
 .openingMenu#notifs,
 .openingMenu#mainmenu {
+    transition: transform 0.1s ease-in-out;
     position: absolute;
     right: 50%;
     bottom: 0px;
-    transform: translateY(100%);
+    transform: translateY(100%) scale(0);
     width: 300px;
     z-index: 500;
+}
+
+.openable.active .openingMenu#notifs,
+.openable.active .openingMenu#mainmenu {
+    transform: translateY(100%) scale(1);
 }
 
 .openingMenu#notifs h4:nth-child(3) {
@@ -335,4 +360,14 @@ main {
 button {
     border: none;
     background-color: var(--bg-prim);
+}
+
+#mainmenu hr {
+    width: 100%;
+}
+
+#mainmenu div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
