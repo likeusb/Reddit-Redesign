@@ -37,10 +37,28 @@ var navMenus = document.getElementsByClassName('openable');
 
 for (var i = 0; i < navMenus.length; i++) {
     navMenus[i].addEventListener('click', function() {
-        filterSelection(this.innerHTML)
+        handleMenuEvents(this.innerHTML);
     });
 };
 
+function handleMenuEvents(menu) {
+    let menuOpened = filterSelection(menu);
+
+    
+    if (menuOpened == 'chat') {
+        navMenus[0].classList.toggle('active');
+        navMenus[1].classList.remove('active');
+        navMenus[2].classList.remove('active');
+    } else if (menuOpened == 'notifs') {
+        navMenus[0].classList.remove('active');
+        navMenus[1].classList.toggle('active');
+        navMenus[2].classList.remove('active');
+    } else if (menuOpened == 'user') {
+        navMenus[0].classList.remove('active');
+        navMenus[1].classList.remove('active');
+        navMenus[2].classList.toggle('active');
+    }
+};
 
 
 function filterSelection(toFilter) {
@@ -49,10 +67,10 @@ function filterSelection(toFilter) {
     const regexUSER = new RegExp(/user.svg/g);
 
     if (regexCHAT.test(toFilter)) { 
-        console.log('chat')
+        return 'chat';
     } else if (regexNOTIF.test(toFilter)) {
-        console.log('notifications')
+        return 'notifs';
     } else if (regexUSER.test(toFilter)) {
-        console.log('user')
+        return 'user';
     }
 }
