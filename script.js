@@ -43,18 +43,18 @@ for (var i = 0; i < navMenus.length; i++) {
 
 function handleMenuEvents(menu) {
     let menuOpened = filterSelection(menu);
-
+    var dmMenu = document.getElementById('dms');
     
     if (menuOpened == 'chat') {
-        navMenus[0].classList.toggle('active');
+        dmMenu.classList.toggle('active');
         navMenus[1].classList.remove('active');
         navMenus[2].classList.remove('active');
     } else if (menuOpened == 'notifs') {
-        navMenus[0].classList.remove('active');
+        dmMenu.classList.remove('active');
         navMenus[1].classList.toggle('active');
         navMenus[2].classList.remove('active');
     } else if (menuOpened == 'user') {
-        navMenus[0].classList.remove('active');
+        dmMenu.classList.remove('active');
         navMenus[1].classList.remove('active');
         navMenus[2].classList.toggle('active');
     }

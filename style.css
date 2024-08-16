@@ -188,7 +188,7 @@ main {
 }
 
 .openingMenu {
-    /* visibility: hidden; */
+    visibility: hidden;
     background-color: var(--bg-prim);
     padding: 10px;
     display: flex;
@@ -206,8 +206,55 @@ main {
     visibility: visible;
 }
 
+#dms {
+    /* visibility: hidden; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    width: 500px;
+    height: 400px;
+    background-color: var(--bg-sec);
+    padding: 10px;
+    border-radius: 20px 0 0 0;
+    outline: 1px solid var(--font-prim);
+}
+
+#dms.active {
+    visibility: visible;
+}
+
+#dms .leftPanel {
+    width: 150px;
+}
+
+#dms .leftPanel .user {
+    display: flex;
+    line-height: 200%;
+}
+
+#dms .rightPanel {
+    width: 350px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.message {
+    background-color: var(--bg-prim);
+    padding: 10px;
+    width: 90%; 
+}
+
+.outgoing {
+    align-self: flex-end;
+}
+
 .openingMenu#notifs,
- .openingMenu#mainmenu {
+.openingMenu#mainmenu {
     position: absolute;
     right: 50%;
     bottom: 0px;
