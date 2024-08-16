@@ -136,12 +136,37 @@ nav .rcontent img {
     display: flex;
     align-items: center;
     gap: 1rem;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.search.searchActive {
+    border-radius: 10px 10px 0 0;
 }
 
 .search img {
     width: 2rem;
     height: 2rem;
     font-size: 1.5rem;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+#searchbox {
+    position: absolute;
+    bottom: 0px;
+    transform: translateY(100%);
+    left: -1px;
+    visibility: visible;
+    background-color: var(--bg-prim);
+    border: 1px solid var(--font-prim);
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    width: calc(100% + 2px);
+    box-sizing: border-box;
+    z-index: 500;
 }
 
 input {

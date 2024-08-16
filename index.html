@@ -11,9 +11,10 @@
 <body>
     <nav>
         <img src="" alt="" class="logo">
-        <div class="search">
-            <img src="" alt="🔎" class="searchIcon">
-            <input type="search" id="search" name="search" placeholder="Search here...">
+        <div class="search" id="search">
+            <img src="img/nav/search.svg" alt="Search" class="searchIcon">
+            <input type="search" id="searchbar" name="searchbar" placeholder="Search here...">
+            <div id="searchbox">lorem ipsum</div>
         </div>
         <div class="rcontent">
             <img src="img/nav/chat.svg" alt="Direct Messages"><img src="img/nav/notifications.svg" alt="Notifications"><img src="img/nav/post.svg" alt="Create a post"><img src="img/nav/user.svg" alt="Your Profile and Settings">
@@ -32,11 +33,12 @@
                     <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quia, eiusasperiores  incidunt voluptatum suscipit.</h2>
                     <img src="" alt="" class="thumbnail">
                     <div class="indicators">
-                        <div class="updownvotes"><img src="img/indicators/upvote.svg" alt="Upvote"><p aria-colspan="counter"  class="votingindicator">2431</p><img src="img/indicators/downvote.svg" alt="Downvote"></div>
-                        <div class="comments"><img src="img/indicators/comment.svg" alt="Comment"><p aria-colspan="counter">851</p></div>
-                        <div class="award"><img src="img/indicators/award.svg" alt="Give an Award"></div>
-                        <div class="share"> <img src="img/indicators/share.svg" alt="Share"><p aria-colspan="counter">241</p></div>
+                        <div class="updownvotes"><img src="img/indicators/upvote.svg" alt="Upvote" id="upvote"><p class="counter"  class="votingindicator">2431</p><img src="img/indicators/downvote.svg" alt="Downvote" id="downvote"></div>
+                        <div class="comments" id="comment"><img src="img/indicators/comment.svg" alt="Comment"><p class="counter">851</p></div>
+                        <div class="award" id="award"><img src="img/indicators/award.svg" alt="Give an Award"></div>
+                        <div class="share" id="share"> <img src="img/indicators/share.svg" alt="Share"><p class="counter">241</p></div>
                     </div>
+                    <img src="img/indicators/menu.svg" alt="Menu" class="menuImg">
                 </div>
             </div>
             <div class="rfeed">
@@ -45,5 +47,6 @@
         </div>
     </main>
     <script src="script.js"></script>
+    <script src="JS/searching.js"></script>
 </body>
 </html>
