@@ -1,8 +1,13 @@
 .mainfeed {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
-    width: 60%;
+    width: 50%;
+}
+
+main {
+    align-items: center;
 }
 
 .post {
@@ -53,14 +58,6 @@
     justify-content: flex-start;
 }
 
-.rfeed {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 20%;
-    min-height: 10px;
-}
-
 .updownvotes img {
     filter: saturate(0) brightness(10);
 }
@@ -76,4 +73,33 @@ img.menuImg {
     justify-self: flex-end;
     bottom: 20px;
     right: 20px;
+}
+
+.postMenu {
+    position: absolute;
+    background-color: var(--bg-prim);
+    padding: 20px;
+    bottom: 60px;
+    right: 20px;
+    border-radius: 10px 10px 0 10px;
+}
+
+.postMenu::after {
+    content: "";
+    position: absolute;
+    background-color: red;
+    /* width: 10px; */
+    /* height: 10px; */
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid green;
+}
+
+.postMenu > div {
+    display: flex;
+    gap: 10px;
+    line-height: 200%;
 }
