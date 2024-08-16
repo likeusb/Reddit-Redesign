@@ -155,7 +155,7 @@ nav .rcontent img {
     width: 100%;
 }
 
-.search input:focus {
+input:focus {
     outline: none;
 }
 
@@ -237,20 +237,62 @@ main {
     width: 350px;
     box-sizing: border-box;
     padding: 10px;
+    height: 400px;
+}
+
+.messages {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     gap: 10px;
+    overflow-y: scroll;
+    height: 330px;
 }
 
 .message {
     background-color: var(--bg-prim);
     padding: 10px;
-    width: 90%; 
 }
 
+.incoming,
 .outgoing {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px;
+    width: 80%;
+}
+
+.outgoing { 
     align-self: flex-end;
+}
+
+.incoming .message:first-child {
+    border-radius: 20px 20px 5px 5px
+}
+
+.incoming .message:first-child:not(:has(+ .message)) {
+    border-radius: 20px 20px 20px 0;
+}
+
+.incoming .message:not(:first-child):not(:last-child) {
+    border-radius: 5px;
+}
+
+.incoming .message:last-child {
+    border-radius: 5px 5px 20px 0;
+}
+
+.input {
+    display: flex;
+    gap: 10px;
+    border: 1px solid var(--font-prim);
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    align-items: center;
 }
 
 .openingMenu#notifs,
