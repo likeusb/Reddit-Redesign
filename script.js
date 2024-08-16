@@ -27,3 +27,32 @@ document.getElementById('share').addEventListener('click', () => {
 
     navigator.share(shareData)
 });
+
+document.getElementById('menuImg').addEventListener('click', () => {
+    let menu = document.getElementById('postMenu');
+    menu.classList.toggle('active');
+});
+
+var navMenus = document.getElementsByClassName('openable');
+
+for (var i = 0; i < navMenus.length; i++) {
+    navMenus[i].addEventListener('click', function() {
+        filterSelection(this.innerHTML)
+    });
+};
+
+
+
+function filterSelection(toFilter) {
+    const regexCHAT = new RegExp(/chat.svg/g);
+    const regexNOTIF = new RegExp(/notifications.svg/g);
+    const regexUSER = new RegExp(/user.svg/g);
+
+    if (regexCHAT.test(toFilter)) { 
+        console.log('chat')
+    } else if (regexNOTIF.test(toFilter)) {
+        console.log('notifications')
+    } else if (regexUSER.test(toFilter)) {
+        console.log('user')
+    }
+}

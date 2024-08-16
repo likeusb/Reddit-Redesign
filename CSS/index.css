@@ -79,23 +79,31 @@ img.menuImg {
     position: absolute;
     background-color: var(--bg-prim);
     padding: 20px;
-    bottom: 60px;
-    right: 20px;
+    bottom: 75px;
+    right: 25px;
     border-radius: 10px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: scale(0);
+    transition: transform 0.1s ease-in-out;
+    transform-origin: bottom right;
+    width: max-content;
+}
+
+.postMenu.active {
+    transform: scale(1);
 }
 
 .postMenu::after {
     content: "";
     position: absolute;
-    background-color: red;
-    /* width: 10px; */
-    /* height: 10px; */
     bottom: 0;
     right: 0;
-    transform: translateY(100%);
+    transform: translateY(calc(100% - 20px)) rotate(45deg) translateX(18px);
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-bottom: 20px solid green;
+    border-bottom: 20px solid var(--bg-prim);
 }
 
 .postMenu > div {
