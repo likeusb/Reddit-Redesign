@@ -226,6 +226,7 @@ main {
 
 #dms .leftPanel {
     width: 150px;
+    overflow-y: scroll;
 }
 
 #dms .leftPanel .user {
@@ -370,4 +371,26 @@ button {
     display: flex;
     gap: 10px;
     align-items: center;
+}
+
+.popupContent {
+    min-width: 300px;
+    height: 75px;
+    background-color: var(--bg-sec);
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid var(--font-prim);
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    transition: transform 0.1s ease-in-out;
+}
+
+.popupContent.active {
+    transform: translateX(-50%) translateY(-50%);
 }

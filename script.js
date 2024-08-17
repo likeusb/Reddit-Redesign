@@ -1,5 +1,7 @@
 var counters = document.getElementsByClassName('counter');
 var clickonMenu = 'false';
+var popup = document.getElementById('popup');
+var poupText = document.getElementById('popupText');
 
 document.getElementById('upvote').addEventListener('click', () => {
     let count = counters[0].textContent;
@@ -106,3 +108,39 @@ function dmScroll() {
 
     messages.scrollTop = messages.scrollHeight;
 }
+
+var options = document.getElementsByClassName('forPopup');
+console.log(options);
+
+for (var i = 0; i < options.length; i++) {
+    options[i].addEventListener('click', function() {
+        const regExFilter = new RegExp(/Save|Hide|Report|Follow Post|Crosspost/g)
+        const filtered = this.innerHTML.toString().match(regExFilter).toString();
+        popupContent(filtered);
+    });
+};
+
+function popupContent(string) {
+    // console.log('initial')
+    popup.insertAdjacentHTML('afterbegin', '<div class="popupContent"><p>'+string+'</p></div>')
+    let popupContent = [];
+    setTimeout(() => {
+        popupContent = document.getElementsByClassName('popupContent');
+        console.log(popupContent)
+        Array.from(popupContent).forEach((element) => {
+            if (!element.classList.contains('active')) {
+                element.classList.add('active');
+            };
+        });
+    }, 50);
+    console.log(string)
+    setTimeout(() => {
+        popupContent = document.getElementsByClassName('popupContent');
+        if (popupContent.classList.contains('active')) {
+            console.log(this)
+        };
+    }, 200);
+    setTimeout(() => {
+        console.log('Removal')
+    }, 2150);
+};
