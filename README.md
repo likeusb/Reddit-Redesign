@@ -7,3 +7,6 @@ This project focused less on actually redesigning it and more on just learning n
   Pretty much a searchbar. If you want to add new entries, feel free to do so by simply modifying the array with all the searchbar entries, and everything should update automatically.
 - Interactable menus:
   Popups aren't that well made yet, so don't expect much from that side of things, but almost all the initial menus can be opened up and they will also close if you click on anything but the menu.
+
+Or just go to this link: https://likeusb.github.io/Reddit-Redesign/
+![image](https://github.com/user-attachments/assets/b56c75f7-538f-431e-9867-b818d4e32786)
